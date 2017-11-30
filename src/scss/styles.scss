@@ -1,0 +1,628 @@
+@charset 'utf-8';
+
+// ==========================================================================
+// Sassy Starter by Mina Markham
+// A SMACSS-based starter toolkit for SCSS projects
+//
+// The toolkit uses recommendations from Scalable and Modular Architecture for CSS (SMACSS)
+// @link http://smacss.com/book
+//
+// Site:    https://minamarkham.github.io/sassy-starter
+// Author:  Mina Markham
+// Email:   mina@mina.codes
+// Date:    10/25/15
+// ==========================================================================
+
+// CSS Debugging
+//
+// Toggle layout debugging with CSS Pesticide.
+//
+// $pesticide-debug-outline - {boolean} adds outlines to all elements.
+// $pesticide-debug-depth - {boolean} adds shadows to all elements.
+// @source - http://pesticide.io/
+
+$pesticide-debug-outline: false;
+$pesticide-debug-depth: false;
+
+// ==========================================================================
+// $Libs
+// ==========================================================================
+@import 'libs/index';
+
+// ==========================================================================
+// $Utilities
+// ==========================================================================
+@import 'utilities/index';
+
+// ==========================================================================
+// $Base
+// ==========================================================================
+@import 'base/index';
+
+// ==========================================================================
+// $Layout
+// ==========================================================================
+@import 'layout/index';
+
+// ==========================================================================
+// $Atoms
+// ==========================================================================
+@import 'atoms/index';
+
+// ==========================================================================
+// $Molecules
+// ==========================================================================
+@import 'molecules/index';
+
+// ==========================================================================
+// $Organisms
+// ==========================================================================
+@import 'organisms/index';
+
+// ==========================================================================
+// $States
+// ==========================================================================
+@import 'states/index';
+
+// ==========================================================================
+// $Overrides
+// ==========================================================================
+@import 'overrides/index';
+
+// ==========================================================================
+// $Print
+// ==========================================================================
+@import 'states/print';
+
+// ==========================================================================
+// $Fonts
+// ==========================================================================
+@import 'utilities/fonts';
+
+// ==========================================================================
+// $Shame
+// ==========================================================================
+@import 'shame';
+
+
+// Custom
+
+$darkBlue: #00a6e6;
+$lightBlue: #a1defb;
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+body {
+    background: #f7fbfe;
+}
+
+button:focus, input:focus, select:focus {
+    outline:0;
+}
+
+header {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    background: white;
+    box-shadow: 5px 5px 10px #ebf3f5;
+
+    a {
+        color: #6c5f59;
+        font-size: 14px;
+    }
+
+    .btnBack {
+        flex: 1;
+
+        i {
+            margin-right: 10px;
+        }
+    }
+
+    .title {
+        flex: 1;
+        text-align: center;
+    }
+
+    .right {
+        flex: 1;
+        text-align: right;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .progress {
+            margin-right: 10px;
+        }
+
+        .badge {
+            width: 23px;
+            margin: 0 7px;
+        }
+
+        .logo {
+            margin-left: 30px;
+        }
+    }
+
+    .logo {
+        img {
+            width: 60px;
+            margin-top: 10px;
+        }
+    }
+}
+
+#page1 {
+    .content {
+        display: flex;
+        justify-content: space-between;
+        padding: 7vw 10vw;
+    
+        .col2 {
+            h1 {
+                font-size: 2.6vw;
+            }
+    
+            .flexBox {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                .recept {
+                    width: 25vw;
+                    height: 25vw;
+                    min-width: 25vw;
+                    background-image: url('../img/png/receptionist@2x.png'), url('../img/png/sam__frustrated@2x.png');
+                    background-position: 0 100%, 2.4vw 2.4vw;
+                    background-size: 100% 60%, 60% 60%;
+                    background-repeat: no-repeat, no-repeat;
+                }
+    
+                .buttons {
+                    display: grid;
+                    margin-left: 9vw;
+                    margin-top: 5vw;
+    
+                    button {
+                        width: 14vw;
+                        height: 5vw;
+                        margin: 0.7vw 0;
+                        background: linear-gradient(90deg, $lightBlue, $darkBlue);
+                        color: white;
+                        font-size: 1.2vw;
+                    }
+                }
+            }
+        }
+    
+        .col1 {
+            text-align: center;
+            margin-left: 4vw;
+    
+            .dropAnswer {
+                margin-top: 1vw;
+                width: 20vw;
+                background: white;
+                text-align: center;
+                border-radius: 5px;
+                padding: 3vw 0 3.5vw;
+                color: #767981;
+                box-shadow: 0 0 20px #eeeeee;
+    
+                p {
+                    margin-bottom: 2vw;
+                    font-size: 1.2vw;
+                }
+    
+                .dropBox {
+                    width: 14vw;
+                    height: calc(5vw - 6px);
+                    border: 3px dashed #d1d1d1;
+                    border-radius: 5px;
+                    margin-left: calc((100% - 14vw - 6px) / 2);
+                }
+            }
+        }
+    }
+    
+    .congratDialog {
+        position: absolute;
+        width: 60%;
+        height: 25vw;
+        background: linear-gradient(90deg, $darkBlue, $lightBlue);
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+        padding: 7vw;
+        display: none;
+        top: calc((100vh - 25vw - 14vw) / 2);
+        left: calc((40% - 14vw) / 2);
+        
+        p {
+            font-size: 1.7vw;
+            line-height: 2.5vw;
+        }
+    
+        .leftText {
+            text-align: left;
+            margin-top: 2vw;
+        }
+    
+        button {
+            width: 20vw;
+            height: 4.8vw;
+            margin-top: 5vw;
+            color: $darkBlue;
+            margin-left: calc((100% - 20vw) / 2);
+            border-radius: 4.8vw;
+            font-size: 1.2vw;
+        }
+    
+        a {
+            text-decoration: underline;
+            color: white;
+            margin-top: 3vw;
+            font-size: 1.2vw;
+        }
+    
+        img {
+            position: absolute;
+            bottom: 0;
+            left: -5vw;
+            width: 18vw;
+        }
+    }
+}
+
+#page2, #page3 {
+    .content {
+        text-align: center;
+        padding-top: 2.5vw;
+
+        .title {
+            font-size: 2.5vw;
+        }
+
+        .row1 {
+            display: flex;
+            justify-content: space-around;
+            padding: 2vw 0;
+            font-size: 1.2vw;
+        }
+
+        .row2 {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            .col1 {
+                flex: 1;
+                display: grid;
+                border-right: 1px solid #dcdee2;
+                padding: 0 12vw;
+                height: 25vw;
+
+                label {
+                    text-align: left;
+                    padding-left: 1vw;
+                    font-size: 1.2vw;
+                    margin-top: 2vw;
+                }
+
+                button, .majorInput {
+                    width: calc(26vw + 0.2rem);
+                    height: 4vw;
+                    text-align: center;
+                    border-radius: 4vw;
+                    border: 0.1rem solid $darkBlue;
+                    box-shadow: 0 0 20px $lightBlue;
+                    font-size: 1.2vw;
+                    color: #d1d1d1;
+
+                    i {
+                        float: right;
+                        margin-right: 1vw;
+                    }
+                }
+
+                .majorInput {
+                    color: #767982;
+                    padding: 0;
+                    margin-bottom: 2vw;
+                }
+
+                /* The custom checkbox */
+                .customCheck {
+                    display: block;
+                    position: relative;
+                    padding-left: 3vw;
+                    cursor: pointer;
+                    font-size: 1.2vw;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+
+                    input {
+                        position: absolute;
+                        opacity: 0;
+                    }
+                }
+
+                /* Create a custom checkbox */
+                .checkmark {
+                    position: absolute;
+                    top: 0;
+                    left: 1vw;
+                    height: 1.6vw;
+                    width: 1.6vw;
+                    border-radius: 0.3vw;
+                    background: linear-gradient(50deg, $lightBlue, $darkBlue);
+                }
+
+                /* On mouse-over, add a grey background color */
+                .customCheck:hover input ~ .checkmark {
+                    background: linear-gradient(50deg, $lightBlue, $darkBlue);
+                }
+
+                /* When the checkbox is checked, add a blue background */
+                .customCheck input:checked ~ .checkmark {
+                    background: linear-gradient(50deg, $lightBlue, $darkBlue);
+                }
+
+                /* Create the checkmark/indicator (hidden when not checked) */
+                .checkmark:after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                }
+
+                /* Show the checkmark when checked */
+                .customCheck input:checked ~ .checkmark:after {
+                    display: block;
+                }
+
+                /* Style the checkmark/indicator */
+                .customCheck .checkmark:after {
+                    left: 0.6vw;
+                    top: 0.3vw;
+                    width: 0.4vw;
+                    height: 0.7vw;
+                    border: solid white;
+                    border-width: 0 0.1vw 0.1vw 0;
+                    -webkit-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                }
+            }
+
+            .col2 {
+                padding: 0 12vw;
+                flex: 1;
+                height: 25vw;
+                background-image: url('../img/png/OAI50D1@2x.png');
+                background-size: 37% 75%;
+                background-repeat: no-repeat;
+                background-position: 16vw 1vw;
+
+                .mark {
+                    width: 7vw;
+                    height: 7vw;
+                    background: linear-gradient(60deg, $darkBlue, $lightBlue);
+                    border-radius: 7px;
+                    color: white;
+                    position: relative;
+                    left: -9vw;
+
+                    span {
+                        display: block;
+                        padding-top: 1.2vw;
+                        font-size: 2.5vw;
+                        font-weight: bold;
+                    }
+
+                    p {
+                        font-size: 0.8vw;
+                    }
+                }
+            }
+        }
+
+        .next {
+            background: linear-gradient(90deg, $darkBlue, $lightBlue);
+            color: white;
+            width: 15vw;
+            height: 4vw;
+            border-radius: 4vw;
+            margin-top: 2vw;
+            box-shadow: 0 0.3vw 1vw $lightBlue;
+            font-size: 1.2vw;
+        }
+    }
+}
+
+#page2 {
+    .content {
+        .row2 {
+            .col2 {
+                .slider {
+                    position: relative;
+                    top: 13.5vw;
+                    input {
+                        margin-top: 3vw;
+                        -webkit-appearance: none;
+                        width: 25vw;
+                        height: 1vw;
+                    }
+                    
+                    input::-webkit-slider-runnable-track {
+                        height: 2vw;
+                        background: linear-gradient(90deg, $lightBlue, $darkBlue);
+                        border: none;
+                        border-top-right-radius: 4vw;
+                        border-top-left-radius: 300%;
+                    }
+                    
+                    input::-webkit-slider-thumb {
+                        -webkit-appearance: none;
+                        border: none;
+                        height: 2.8vw;
+                        width: 2.8vw;
+                        border: 2px solid white;
+                        border-radius: 50%;
+                        background: linear-gradient(45deg, $darkBlue, $lightBlue);
+                        margin-top: 0vw;
+                        box-shadow: 0 0 5px #aaaaaa;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#page3 {
+    background-image: url('../img/png/611@2x.png'), url('../img/png/610@2x.png');
+    background-repeat: no-repeat no-repeat;
+    background-position: -7vw 38vw, -9vw 42vw;
+    background-size: 10vw 15vw, 27vw 25vw;
+    .content {
+        padding-top: 4vw;
+        .pie {
+            position: absolute;
+            right: 1vw;
+            top: calc(60px + 1vw);
+
+            .outer, .inner {
+                fill: transparent;
+                stroke: $darkBlue;
+                stroke-width: 0.5vw;
+                stroke-dasharray: 200 189;
+                transform: rotateZ(-90deg) translateX(-10vw);
+            }
+
+            .inner {
+                stroke-width: 0.2vw;
+                stroke-dasharray: none;
+                stroke: $lightBlue;
+            }
+
+            text {
+                font-size: 1.2vw;
+            }
+        }
+        
+        .row1 {
+            padding: 4vw 0 0;
+
+            p {
+                flex: 1;
+            }
+        }
+
+        .row2 {
+            .col1 {
+                height: 24vw;
+
+                label {
+                    margin-top: 1vw;
+                }
+
+                .majorInput {
+                    margin-bottom: 0;
+                }
+            }
+
+            .col2 {
+                height: 24vw;
+                padding-top: 3vw;
+                background-image: url('../img/png/Sam@2x.png');
+                background-repeat: no-repeat;
+                background-size: 25vw 25vw;
+                background-position: 10vw 0;
+
+                .slider {
+                    position: absolute;
+                    right: 5vw;
+
+                    .sliderBackground {
+                        height: 0;
+                        width: 1vw;
+                        background: linear-gradient(180deg, $lightBlue, $darkBlue);
+                        position: absolute;
+                        right: 8.5vw;
+                        top: -5.5vw;
+                        border-radius: 1vw;
+                    }
+                    
+                    input {
+                        margin-top: 3vw;
+                        -webkit-appearance: none;
+                        width: 18vw;
+                        height: 1vw;
+                        -webkit-transform: rotate(90deg);
+                        box-shadow: 0 0 0.5vw #aaaaaa;
+                        border-radius: 1vw;
+                    }
+                    
+                    input::-webkit-slider-runnable-track {
+                        height: 1vw;
+                        background: white;
+                        border: none;
+                        border-radius: 1vw;
+                    }
+                    
+                    input::-webkit-slider-thumb {
+                        -webkit-appearance: none;
+                        border: none;
+                        height: 1.8vw;
+                        width: 1.8vw;
+                        border-radius: 50%;
+                        background: linear-gradient(90deg, $darkBlue, $lightBlue);
+                        margin-top: -0.37vw;
+                        box-shadow: 1vw 0 0.5vw #aaaaaa;
+                    }
+                    
+                    input:focus {
+                        outline: none;
+                    }
+                    
+                    input:focus::-webkit-slider-runnable-track {
+                        background: white;
+                    }
+
+                    .label {
+                        position: absolute;
+                        right: 6vw;
+                        font-size: 1.8vw;
+                    }
+
+                    .label:nth-of-type(1) {
+                        top: -6.1vw;
+                    }
+
+                    .label:nth-of-type(2) {
+                        top: -1.8vw;
+                    }
+
+                    .label:nth-of-type(3) {
+                        top: 2.5vw;
+                    }
+
+                    .label:nth-of-type(4) {
+                        top: 6.8vw;
+                    }
+
+                    .label:nth-of-type(5) {
+                        top: 11.1vw;
+                    }
+                }
+            }
+        }
+    }
+}
