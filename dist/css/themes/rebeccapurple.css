@@ -393,7 +393,7 @@ header .right .logo {
 }
 
 header .logo img {
-  width: 60px;
+  width: 80px;
   margin-top: 10px;
 }
 
@@ -438,9 +438,10 @@ header .logo img {
   width: 14vw;
   height: 5vw;
   margin: 0.7vw 0;
-  background: linear-gradient(90deg, #a1defb, #00a6e6);
+  background: linear-gradient(90deg, #00B1E3, #28A0EA);
   color: white;
   font-size: 1.2vw;
+  border: none !important;
 }
 
 #page1 .content .col1 {
@@ -476,7 +477,7 @@ header .logo img {
   position: absolute;
   width: 60%;
   height: 25vw;
-  background: linear-gradient(90deg, #00a6e6, #a1defb);
+  background: linear-gradient(90deg, #28A0EA, #00B1E3);
   border-radius: 10px;
   color: white;
   text-align: center;
@@ -504,6 +505,7 @@ header .logo img {
   margin-left: calc((100% - 20vw) / 2);
   border-radius: 4.8vw;
   font-size: 1.2vw;
+  border: none !important;
 }
 
 #page1 .congratDialog a {
@@ -575,15 +577,19 @@ header .logo img {
   height: 4vw;
   text-align: center;
   border-radius: 4vw;
-  border: 0.1rem solid #00a6e6;
-  box-shadow: 0 0 20px #a1defb;
+  border: 1px solid #00a6e6;
   font-size: 1.2vw;
   color: #d1d1d1;
+  font-weight: 500;
 }
 
 #page2 .content .row2 .col1 button i, #page2 .content .row2 .col1 .majorInput i, #page3 .content .row2 .col1 button i, #page3 .content .row2 .col1 .majorInput i {
   float: right;
   margin-right: 1vw;
+}
+
+#page2 .content .row2 .col1 button:focus, #page2 .content .row2 .col1 .majorInput:focus, #page3 .content .row2 .col1 button:focus, #page3 .content .row2 .col1 .majorInput:focus {
+  box-shadow: 0 0 5px #a1defb;
 }
 
 #page2 .content .row2 .col1 .majorInput, #page3 .content .row2 .col1 .majorInput {
@@ -680,14 +686,15 @@ header .logo img {
 }
 
 #page2 .content .next, #page3 .content .next {
-  background: linear-gradient(90deg, #00a6e6, #a1defb);
+  background: linear-gradient(90deg, #28A0EA, #00B1E3);
   color: white;
   width: 15vw;
   height: 4vw;
   border-radius: 4vw;
   margin-top: 2vw;
-  box-shadow: 0 0.3vw 1vw #a1defb;
+  box-shadow: 0 0.2vw 1vw #a1defb;
   font-size: 1.2vw;
+  border: none !important;
 }
 
 #page2 .content .row2 .col2 .slider {
@@ -713,8 +720,8 @@ header .logo img {
 #page2 .content .row2 .col2 .slider input::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: none;
-  height: 2.8vw;
-  width: 2.8vw;
+  height: 2.5vw;
+  width: 2.5vw;
   border: 2px solid white;
   border-radius: 50%;
   background: linear-gradient(45deg, #00a6e6, #a1defb);
@@ -808,7 +815,7 @@ header .logo img {
   width: 18vw;
   height: 1vw;
   -webkit-transform: rotate(90deg);
-  box-shadow: 0 0 0.5vw #aaaaaa;
+  box-shadow: 0 0 0.5vw #cccccc;
   border-radius: 1vw;
 }
 

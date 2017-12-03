@@ -470,7 +470,9 @@ header {
                     
                     input::-webkit-slider-runnable-track {
                         height: 2vw;
-                        background: linear-gradient(90deg, $lightBlue, $darkBlue);
+                        // background: linear-gradient(90deg, $lightBlue, $darkBlue);
+                        background-image: url('../img/png/slider-bcg.png');
+                        background-size: 100% 100%;
                         border: none;
                         border-top-right-radius: 4vw;
                         border-top-left-radius: 300%;
